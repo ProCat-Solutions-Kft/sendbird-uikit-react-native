@@ -61,8 +61,8 @@ export const truncatedCount = (count: number, MAX = 99, MAX_SUFFIX = '+') => {
  * @returns {string}
  * */
 export const getDateSeparatorFormat = (date: Date, locale?: Locale): string => {
-  if (isThisYear(date)) return format(date, 'MMM dd, yyyy', { locale });
-  return format(date, 'E, MMM dd', { locale });
+  if (isThisYear(date)) return format(date, 'MMM dd, yyyy');
+  return format(date, 'E, MMM dd');
 };
 
 /**
@@ -73,7 +73,7 @@ export const getDateSeparatorFormat = (date: Date, locale?: Locale): string => {
  * @returns {string}
  * */
 export const getMessageTimeFormat = (date: Date, locale?: Locale): string => {
-  return format(date, 'p', { locale });
+  return format(date, 'p');
 };
 
 /**
@@ -119,11 +119,11 @@ export const getMessagePreviewBody = (message: SendbirdBaseMessage, EMPTY_MESSAG
  * Message preview time format
  * */
 export const getMessagePreviewTime = (timestamp: number, locale?: Locale) => {
-  if (isToday(timestamp)) return format(timestamp, 'p', { locale });
+  if (isToday(timestamp)) return format(timestamp, 'p');
   if (isYesterday(timestamp)) return 'Yesterday';
-  if (isThisYear(timestamp)) return format(timestamp, 'MMM dd', { locale });
+  if (isThisYear(timestamp)) return format(timestamp, 'MMM dd');
 
-  return format(timestamp, 'yyyy/MM/dd', { locale });
+  return format(timestamp, 'yyyy/MM/dd');
 };
 
 /**
